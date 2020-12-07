@@ -35,13 +35,6 @@ pipeline {
 		}
 	}  
 
-	stage('Performance test') {
-
-            steps {
-              sh 'jmeter -Jjmeter.save.saveservice.output_forma=xml -n -t SummaryReport.jmx/SummaryReport.jmx -l Test.jtl '
-			  perfReport filterRegex: '', sourceDataFiles: 'Test.jtl'
-            }
-        }
         stage('Quality Analyses') {
             steps {
                 echo 'Sonar'
