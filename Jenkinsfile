@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Buid') {
             steps {
-                git 'https://github.com/FabioNazario/alunoapp.git'
+                git 'https://github.com/FabioNazario/bootalunoapp.git'
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
             
