@@ -21,7 +21,8 @@ pipeline {
         }
         
         stage("Deploy Docker") {
-		steps {   
+		steps {
+		       sh 'sudo su'
 		       script {
 			 	try {
 			      		sh 'docker stop bootalunoapp && docker rm bootalunoapp'                            
