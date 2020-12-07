@@ -21,6 +21,7 @@ pipeline {
         }
         stage('Quality Analyses') {
             steps {
+                echo 'Sonar'
                 //sh 'mvn sonar:sonar'
             }
         }
