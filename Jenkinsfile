@@ -22,7 +22,6 @@ pipeline {
         
         stage("Deploy Docker") {
 		steps {
-		       sh 'whoami'
 		       script {
 			 	try {
 			      		sh 'docker stop bootalunoapp && docker rm bootalunoapp'                            
