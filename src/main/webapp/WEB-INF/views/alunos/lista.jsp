@@ -24,6 +24,7 @@
 		<div class="jumbotron">
 		   <h1> <i class="fa fa-tachometer" aria-hidden="true"></i> Aplicacao com springmvc</h1>
 		   <h3>Com spring boot</h3>
+		   <h3>Editado por BEFR</h3>
 		</div>
 
 		<div class="d-flex justify-content-between">
