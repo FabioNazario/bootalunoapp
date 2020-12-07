@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Quality Analyses') {
             steps {
-                sh 'mvn sonar:sonar'
+                //sh 'mvn sonar:sonar'
             }
         }
         stage('Repository') {
