@@ -21,21 +21,21 @@ pipeline {
         }
         
         stage("Deploy Docker") {
-        steps {   
-               script {
-                  try {
-		             sh 'docker stop bootalunoapp && docker rm bootalunoapp'                            
-                  } catch (Exception e) {
-                      sh 'Nao foi possivel remover" '
-                  }
-                }
+		steps {   
+		       script {
+			 	try {
+			      		sh 'docker stop bootalunoapp && docker rm bootalunoapp'                            
+			  	} catch (Exception e) {
+			      		sh 'Nao foi possivel remover" '
+			  	}
+		       	}
 
-		     sh 'docker build -t fabionazario/bootalunoapp:${BUILD_ID} . '
-             sh 'docker run --name bootalunoapp -dp 8181:8181 bootalunoapp:${BUILD_ID} '
-  			}
-  		}  
+		       	sh 'docker build -t fabionazario/bootalunoapp:firsttry . '
+			sh 'docker push fabionazario/bootalunoapp:firsttry'
+		}
+	}  
 
-	  stage('Performance test') {
+	stage('Performance test') {
 
             steps {
               sh 'jmeter -Jjmeter.save.saveservice.output_forma=xml -n -t SummaryReport.jmx/SummaryReport.jmx -l Test.jtl '
