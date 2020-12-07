@@ -22,13 +22,13 @@ pipeline {
         
         stage("Deploy Docker") {
 		steps {
-		       script {
+		       /*script {
 			 	try {
 			      		sh 'docker stop bootalunoapp && docker rm bootalunoapp'                            
 			  	} catch (Exception e) {
 			      		sh 'Nao foi possivel remover" '
 			  	}
-		       	}
+		       	}*/
 
 		       	sh 'docker build -t fabionazario/bootalunoapp:firsttry . '
 			sh 'docker push fabionazario/bootalunoapp:firsttry'
