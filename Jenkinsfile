@@ -20,10 +20,9 @@ pipeline {
             }
         }
        
-        stage('Tests') {
+        stage('Integration Test') {
             steps {
-                echo 'Selenium'
-                //sh 'mvn sonar:sonar'
+                sh 'mvn verify'
             }
         }
         
