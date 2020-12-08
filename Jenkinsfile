@@ -19,8 +19,15 @@ pipeline {
                 }
             }
         }
+       
+        stage('Tests') {
+            steps {
+                echo 'Selenium'
+                //sh 'mvn sonar:sonar'
+            }
+        }
         
-        stage("Deploy Docker") {
+        stage("Docker Build/Push") {
 		steps {
 		       /*script {
 			 	try {
@@ -35,9 +42,9 @@ pipeline {
 		}
 	}  
 
-        stage('Quality Analyses') {
+        stage('Deploy Kubernets') {
             steps {
-                echo 'Sonar'
+                echo 'Não consegui fazer'
                 //sh 'mvn sonar:sonar'
             }
         }
