@@ -21,7 +21,9 @@ public class InsertIT {
 
 	@BeforeEach
 	public void setUp() {
-		driver = new ChromeDriver();
+		ChromeOptions op = new ChromeOptions();
+		op.addArguments("headless");
+		driver = new ChromeDriver(op);
 		js = (JavascriptExecutor) driver;
 		vars = new HashMap<String, Object>();
 	}
