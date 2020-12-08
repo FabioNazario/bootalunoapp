@@ -41,15 +41,5 @@ pipeline {
                 //sh 'mvn sonar:sonar'
             }
         }
-        stage('Repository') {
-            steps {
-                echo 'Repository'
-            }
-        }
-        stage('Deploy Tomcat') {
-            steps {
-                echo 'Deploy Tomcat'
-            }
-        }
     }
 }  
