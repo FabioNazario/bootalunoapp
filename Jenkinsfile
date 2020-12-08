@@ -27,24 +27,15 @@ pipeline {
         }
         
         stage("Docker Build/Push") {
-		steps {
-		       /*script {
-			 	try {
-			      		sh 'docker stop bootalunoapp && docker rm bootalunoapp'                            
-			  	} catch (Exception e) {
-			      		sh 'Nao foi possivel remover" '
-			  	}
-		       	}*/
-
-		       	sh 'docker build -t fabionazario/bootalunoapp:firsttry . '
-			sh 'docker push fabionazario/bootalunoapp:firsttry'
-		}
+	    steps {
+	        sh 'docker build -t fabionazario/bootalunoapp:firsttry . '
+		sh 'docker push fabionazario/bootalunoapp:firsttry'
+	    }
 	}  
 
         stage('Deploy Kubernets') {
             steps {
                 echo 'Não consegui fazer'
-                //sh 'mvn sonar:sonar'
             }
         }
     }
